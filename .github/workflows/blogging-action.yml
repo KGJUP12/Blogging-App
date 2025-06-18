@@ -8,3 +8,12 @@ jobs:
     steps:
     - name: Print Hello World
       run: echo "Hello World" 
+  compile:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Git Checkout
+    - uses: actions/checkout@v4 ## First we do Git SCM checkout so that our repo is available in the runner 
+
+    - name: Compile the code
+    - run: mvn compile
