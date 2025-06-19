@@ -72,6 +72,11 @@ jobs:
     needs: sonarqube
     steps:
     - uses: actions/checkout@v4
+    - uses: actions/setup@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: maven
     - name: Build Code
       run: mvn package
       
