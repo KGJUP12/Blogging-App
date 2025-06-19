@@ -10,7 +10,7 @@ jobs:
       run: echo "Hello World" 
   compile:
     needs: hello-world
-    runs-on: ubuntu-latest    
+    runs-on: self-hosted    
     steps:
     - uses: actions/checkout@v4 ## First we do Git SCM checkout so that our repo is available in the runner 
       name: Setup JDK
@@ -23,7 +23,7 @@ jobs:
       run: mvn compile
   security-check:
     needs: compile
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
     - uses: actions/checkout@v4
     - name: Install Trivy
