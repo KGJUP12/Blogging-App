@@ -45,6 +45,10 @@ jobs:
     needs: security-check
     steps:
     - uses: actions/checkout@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: maven
     - name: Run test cases
       run: mvn test
       
