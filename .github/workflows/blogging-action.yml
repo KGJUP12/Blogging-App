@@ -44,6 +44,7 @@ jobs:
     runs-on: runner1
     needs: security-check
     steps:
+    - uses: actions/checkout@v4
     - name: Run test cases
       run: mvn test
       
