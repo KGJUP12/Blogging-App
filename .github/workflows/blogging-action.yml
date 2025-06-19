@@ -67,5 +67,12 @@ jobs:
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         SONAR_HOST_URL: ${{ vars.SONAR_HOST_URL }}
+  Build:
+    runs-on: self-hosted
+    needs: sonarqube
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build Code
+      run: mvn package
       
 
