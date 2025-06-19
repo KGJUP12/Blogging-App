@@ -40,5 +40,11 @@ jobs:
       run: sudo apt install gitleaks -y
     - name: Gitleaks Code Scan
       run: gitleaks detect source . -r gitleaks-report.json -f json
+  unit-test:
+    runs-on: runner1
+    needs: security-check
+    steps:
+    - name: Run test cases
+      run: mvn test
       
 
