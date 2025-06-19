@@ -9,6 +9,7 @@ jobs:
     - name: Print Hello World
       run: echo "Hello World" 
   compile:
+    needs: hello-world
     runs-on: ubuntu-latest    
     steps:
     - uses: actions/checkout@v4 ## First we do Git SCM checkout so that our repo is available in the runner 
