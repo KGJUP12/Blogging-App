@@ -1,4 +1,4 @@
-name: Github Actions Name is Blogging-Actions.
+name: Github Actions Name is Blogging-Actions
 on:
   push:
     branches: [ "main" ]
