@@ -104,7 +104,8 @@ jobs:
       uses: docker/build-push-action@v6
       with:
         push: true
-        tags: kavindra123/Blogging-app:latest
+        tags: kavindra123/blogging-app:latest
+
       
       
       
