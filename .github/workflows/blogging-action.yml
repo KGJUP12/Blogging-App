@@ -4,13 +4,13 @@ on:
     branches: [ "main" ]
 jobs:
   hello-world:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
     - name: Print Hello World
       run: echo "Hello World" 
   compile:
     #needs: hello-world
-    runs-on: runner1   
+    runs-on: self-hosted   
     steps:
     - name: Install Maven
       run: sudo apt-get update && sudo apt-get install maven -y
@@ -25,7 +25,7 @@ jobs:
       run: mvn compile
   security-check:
     needs: compile
-    runs-on: runner1
+    runs-on: self-hosted
     steps:
     - uses: actions/checkout@v4
     - name: Install Trivy
@@ -43,8 +43,8 @@ jobs:
     - name: Gitleaks Code Scan
       run: gitleaks detect source . -r gitleaks-report.json -f json
   unit-test:
-    runs-on: runner1
-    #needs: security-check
+    runs-on: self-hosted
+    needs: security-check
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-java@v4
