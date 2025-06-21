@@ -4,7 +4,9 @@ EXPOSE 8080
  
 ENV APP_HOME /usr/src/app
 
-COPY app/*.jar $APP_HOME/app.jar   // in github actions we are uploading jar and downloading in docker stage in app/ folder thus updated this copy source path
+# Copy JAR file downloaded from GitHub Actions artifact
+# The file is downloaded into ./app/ by the download-artifact step
+COPY app/*.jar $APP_HOME/app.jar
 
 WORKDIR $APP_HOME
 
