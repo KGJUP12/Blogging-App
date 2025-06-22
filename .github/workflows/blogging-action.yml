@@ -104,9 +104,9 @@ jobs:
         path: app  # it will download file in ./app
 
     - name: Check downloaded JARs
-        run:|
-              echo "Listing contents of app directory:"
-              ls -lh app
+      run: |
+           echo "Listing contents of app directory:"
+           ls -lh app
     - name: Docker Login
       uses: docker/login-action@v3
       with: 
