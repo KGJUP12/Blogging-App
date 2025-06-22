@@ -122,6 +122,14 @@ jobs:
         context: .
         file: ./Dockerfile
 
+  kubernetes: 
+      runs-on: self-hosted
+      needs: docker
+      steps:
+      - uses: actions/checkout@v4
+      - name: Apply the Yaml Manifest
+        run: kubectl apply -y manifest.yaml
+      
       
       
       
