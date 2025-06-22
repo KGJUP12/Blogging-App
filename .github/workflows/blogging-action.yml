@@ -128,7 +128,7 @@ jobs:
       steps:
       - uses: actions/checkout@v4
       - name: Apply the Yaml Manifest
-        run: kubectl apply -y manifest.yaml
+        run: kubectl apply -f manifests.yaml
       
       
       
